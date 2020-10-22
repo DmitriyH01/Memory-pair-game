@@ -8,7 +8,7 @@
 
 .card {
   position: relative;
-  background: url('/images/cardClosed.png') no-repeat;
+  background: url('../images/cardClosed.png') no-repeat;
   margin: 5px;
   border-radius: 10px;
   height: 225px;
