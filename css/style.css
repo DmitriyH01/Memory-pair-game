@@ -8,23 +8,31 @@
 
 .card {
   position: relative;
-  background: url('/images/cardClosed.png') no-repeat;
+  background: url('../images/cardClosed.png') no-repeat;
   margin: 5px;
   border-radius: 10px;
   height: 225px;
+  transition: transform 0.7s;
+  transform: rotateY(180deg);
 }
+
+.card:active {
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+
+/* .card__clicked:active {
+  transform: scale(0.95);
+  transition: transform 0.2s;
+} */
 
 .card__clicked {
   margin: 5px;
   border-radius: 10px;
+  transition: transform 0.7s;
 }
 
 .card img {
   display: none;
   align-items: center;
-}
-
-.main div {
-  transition-duration: 1s;
-  transition-property: all;
 }

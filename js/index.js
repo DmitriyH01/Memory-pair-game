@@ -1,9 +1,9 @@
 const arrCards = [
-  '/images/Alfa-romeo.jpeg',
-  '/images/Ford.jpeg',
-  '/images/Mazda.jpeg',
-  '/images/Nissan.jpeg',
-  '/images/Peugeot.jpeg',
+  'images/Alfa-romeo.jpeg',
+  'images/Ford.jpeg',
+  'images/Mazda.jpeg',
+  'images/Nissan.jpeg',
+  'images/Peugeot.jpeg',ы
 ];
 //my random array with my img
 const doubleCards = arrCards.concat(arrCards);
@@ -11,6 +11,8 @@ const doubleCards = arrCards.concat(arrCards);
 doubleCards.sort(function () {
   return 0.5 - Math.random();
 });
+
+let winCount = 0;
 
 const cards = document.querySelector('main');
 const noClicked = cards.getElementsByClassName('card');
@@ -40,7 +42,7 @@ const overturnsCard = function () {
       target.classList.add('card__clicked');
     }
 
-    compareImgs(cardImg);
+    //compareImgs(cardImg);
   });
 };
 
@@ -77,19 +79,28 @@ const compareImgs = function (arrImg) {
         secondImg.remove();
         arrCheckImg[1].classList.remove('card__clicked');
       }, 500);
+      checkWin();
     }
 
     if (firstImg.src !== secondImg.src) {
       setTimeout(function () {
-        arrCheckImg[0].classList.remove('card__clicked');
-        arrCheckImg[0].classList.add('card');
-        arrCheckImg[1].classList.add('card');
-        arrCheckImg[1].classList.remove('card__clicked');
+        arrCheckImg[0].classList.replace('card__clicked', 'card');
+        arrCheckImg[1].classList.replace('card__clicked', 'card');
       }, 500);
     }
   }
   document.body.appendChild(cards);
 };
+
+// displays a message about victory
+function checkWin() {
+  winCount++;
+  if (winCount === 5) {
+    setTimeout(function () {
+      alert('You are the winner!');
+    }, 600);
+  }
+}
 
 createImgs(noClicked, doubleCards);
 overturnsCard();
