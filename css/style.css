@@ -12,24 +12,20 @@
   margin: 5px;
   border-radius: 10px;
   height: 225px;
-  transition: transform 0.7s;
+  transition: transform 0.5s;
   transform: rotateY(180deg);
 }
 
 .card:active {
   transform: scale(0.95);
-  transition: transform 0.2s;
+  transition: transform 150ms;
 }
-
-/* .card__clicked:active {
-  transform: scale(0.95);
-  transition: transform 0.2s;
-} */
 
 .card__clicked {
   margin: 5px;
   border-radius: 10px;
-  transition: transform 0.7s;
+  transition: transform 0.5s;
+  transform: ease;
 }
 
 .card img {

@@ -16,7 +16,6 @@ let winCount = 0;
 
 //this func must added imgs in all my cards
 const allCardsOnTheDesk = document.querySelector('main');
-
 const putImgsInCards = function () {
   const fragment = document
     .createDocumentFragment()
@@ -52,11 +51,10 @@ const overturnsCard = function () {
 };
 
 // this func compares two showed imgs
-
 const fragmentForCompaires = document.createDocumentFragment();
-
 const compareImgs = function () {
   fragmentForCompaires.appendChild(allCardsOnTheDesk);
+
   const cardsImg = allCardsOnTheDesk.children;
   const checkImg = [];
 
@@ -71,6 +69,7 @@ const compareImgs = function () {
     }
   }
   if (checkImg.length > 2) {
+    checkImg.pop();
   }
   // if opened two cards
 
@@ -84,7 +83,7 @@ const compareImgs = function () {
         checkImg[0].classList.remove('card__clicked');
         secondImg.remove();
         checkImg[1].classList.remove('card__clicked');
-      }, 500);
+      }, 400);
       checkWin();
     }
 
@@ -92,7 +91,7 @@ const compareImgs = function () {
       setTimeout(function () {
         checkImg[0].classList.replace('card__clicked', 'card');
         checkImg[1].classList.replace('card__clicked', 'card');
-      }, 500);
+      }, 400);
     }
   }
   document.body.appendChild(allCardsOnTheDesk);
@@ -109,20 +108,3 @@ function checkWin() {
 }
 putImgsInCards();
 overturnsCard();
-
-// const fragment = ...
-
-// const div = ...
-// cosnt img = ...
-
-// div.appendChild(img)
-// fragment.appendChild(div)
-
-// [div.img, div.img, ...div.]
-
-// cards.appendChild(fragment)
-
-// 1. название переменых
-// 2. нормальное добавление карточек во фрагмент
-// 3. фрагмент - в дом одним махом
-// 4. переворот карточек с анимацие
