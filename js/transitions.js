@@ -30,9 +30,10 @@ const putImgsInCards = function () {
 };
 
 // this function flips the cards
+
 const overturnsCard = function () {
   allCardsOnTheDesk.addEventListener('click', function (event) {
-    let target = event.target;
+    const target = event.target;
 
     if (target.nodeName !== 'DIV') {
       return;
@@ -68,10 +69,15 @@ const compareImgs = function () {
       }
     }
   }
+  //clicked no more than two cadrs
   if (checkImg.length > 2) {
-    checkImg.pop();
+    for (let x = 0; x < cardsImg.length; x++) {
+      if (cardsImg[x].classList.contains('card__clicked')) {
+        cardsImg[x].classList.remove('card__clicked');
+        cardsImg[x].classList.add('card');
+      }
+    }
   }
-  // if opened two cards
 
   if (checkImg.length === 2) {
     const firstImg = checkImg[0].firstChild;
