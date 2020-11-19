@@ -84,7 +84,7 @@ const compareImgs = function () {
     const secondImg = checkImg[1].firstChild;
 
     if (firstImg.src === secondImg.src) {
-      setTimeout(function () {
+      timer = setTimeout(function () {
         firstImg.remove();
         checkImg[0].classList.remove('card__clicked');
         secondImg.remove();
@@ -94,7 +94,7 @@ const compareImgs = function () {
     }
 
     if (firstImg.src !== secondImg.src) {
-      setTimeout(function () {
+      timer = setTimeout(function () {
         checkImg[0].classList.replace('card__clicked', 'card');
         checkImg[1].classList.replace('card__clicked', 'card');
       }, 400);
