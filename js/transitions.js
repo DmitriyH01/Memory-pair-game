@@ -17,11 +17,9 @@ function getingSortList() {
 let winCount = 0;
 
 //this func must added imgs in all my cards
-const allCardsOnTheDesk = document.getElementById('cards_block');
+const gameBoard = document.getElementById('cards_block');
 const putImgsInCards = function () {
-  const fragment = document
-    .createDocumentFragment()
-    .appendChild(allCardsOnTheDesk);
+  const fragment = document.createDocumentFragment().appendChild(gameBoard);
 
   for (let i = 0; i < cardDeck.length; i++) {
     const img = document.createElement('img');
@@ -32,7 +30,7 @@ const putImgsInCards = function () {
 };
 
 const overturnsCard = function () {
-  allCardsOnTheDesk.addEventListener('click', function ({ target }) {
+  gameBoard.addEventListener('click', function ({ target }) {
     if (target.nodeName !== 'DIV') {
       return;
     }
@@ -52,9 +50,9 @@ const overturnsCard = function () {
 
 const fragmentForCompaires = document.createDocumentFragment();
 const compareImgs = function () {
-  fragmentForCompaires.appendChild(allCardsOnTheDesk);
+  fragmentForCompaires.appendChild(gameBoard);
 
-  const cardsImg = allCardsOnTheDesk.children;
+  const cardsImg = gameBoard.children;
   const checkImg = [];
 
   for (let x = 0; x < cardsImg.length; x++) {
@@ -98,7 +96,7 @@ const compareImgs = function () {
       }, 400);
     }
   }
-  document.body.appendChild(allCardsOnTheDesk);
+  document.body.appendChild(gameBoard);
 };
 
 function CountingMatchingPairsOfCards() {
