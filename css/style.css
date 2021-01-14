@@ -16,10 +16,10 @@
   transform: rotateY(180deg);
 }
 
-.card:active {
+/* .card:active {
   transform: scale(0.95);
   transition: transform 150ms;
-}
+} */
 
 .card__clicked {
   margin: 5px;
