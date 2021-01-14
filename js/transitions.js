@@ -48,9 +48,9 @@ const overturnsCard = function () {
   });
 };
 
-const fragmentForCompaires = document.createDocumentFragment();
+const comparison = document.createDocumentFragment();
 const compareImgs = function () {
-  fragmentForCompaires.appendChild(gameBoard);
+  comparison.appendChild(gameBoard);
 
   const cardsImg = gameBoard.children;
   const checkImg = [];
@@ -96,7 +96,7 @@ const compareImgs = function () {
       }, 400);
     }
   }
-  document.body.appendChild(gameBoard);
+  document.querySelector('main').appendChild(gameBoard);
 };
 
 function CountingMatchingPairsOfCards() {
