@@ -17,7 +17,7 @@ function getingSortList() {
 let winCount = 0;
 
 //this func must added imgs in all my cards
-const allCardsOnTheDesk = document.querySelector('main');
+const allCardsOnTheDesk = document.getElementById('cards_block');
 const putImgsInCards = function () {
   const fragment = document
     .createDocumentFragment()
@@ -28,7 +28,7 @@ const putImgsInCards = function () {
     img.src = cardDeck[i];
     fragment.children[i].appendChild(img);
   }
-  document.body.appendChild(fragment);
+  document.querySelector('main').appendChild(fragment);
 };
 
 const overturnsCard = function () {
