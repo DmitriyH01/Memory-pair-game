@@ -31,23 +31,6 @@ const putImgsInCards = function () {
   document.body.appendChild(fragment);
 };
 
-// const overturnsCard = ({ target }) => {
-//   if (target.nodeName !== 'DIV') {
-//     return;
-//   }
-
-//   if (target.classList.contains('card__clicked') === true) {
-//     target.classList.remove('card__clicked');
-//     target.classList.add('card');
-//   } else if (target.classList.contains('card') === true) {
-//     target.classList.remove('card');
-//     target.classList.add('card__clicked');
-//   }
-//   compareImgs();
-// };
-
-// allCardsOnTheDesk.addEventListener('click', overturnsCard());
-
 const overturnsCard = function () {
   allCardsOnTheDesk.addEventListener('click', function ({ target }) {
     if (target.nodeName !== 'DIV') {
