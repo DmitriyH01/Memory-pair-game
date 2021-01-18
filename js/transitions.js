@@ -7,6 +7,7 @@ const imageses = [
 ];
 
 const cardDeck = [...imageses, ...imageses];
+const duration = 600;
 
 function getingSortList() {
   cardDeck.sort(function () {
@@ -88,7 +89,7 @@ const compareImgs = function () {
         secondImg.remove();
         checkImg[1].classList.remove('card__clicked');
       }, 400);
-      CountingMatchingPairsOfCards();
+      winCount++;
     }
 
     if (firstImg.src !== secondImg.src) {
@@ -101,15 +102,11 @@ const compareImgs = function () {
   document.querySelector('main').appendChild(gameBoard);
 };
 
-function CountingMatchingPairsOfCards() {
-  winCount++;
-}
-
 function checkWin() {
-  if (winCount === 5) {
+  if (winCount === imageses.length) {
     setTimeout(function () {
       alert('You are the winner!');
-    }, 600);
+    }, duration);
   }
 }
 
