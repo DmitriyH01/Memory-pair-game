@@ -70,7 +70,6 @@ function checkCards(card) {
 }
 
 function showCard({ target }) {
-  console.log(isBlock);
   if (!isBlock) {
     const parentCard = target.closest('.card');
     parentCard.classList.add('card--show');
