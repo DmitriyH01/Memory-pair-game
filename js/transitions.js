@@ -8,6 +8,11 @@ const imageses = [
 
 const cardDeck = [...imageses, ...imageses];
 const duration = 600;
+let winCount = 0;
+let firstOpenCard = null;
+let isBlock = false;
+const pointsWon = imageses.length;
+const gameBoard = document.getElementById('cards_block');
 
 function getingSortList() {
   cardDeck.sort(function () {
@@ -15,19 +20,16 @@ function getingSortList() {
   });
 }
 
-let winCount = 0;
-
-//this func must added imgs in all my cards
-const gameBoard = document.getElementById('cards_block');
 const putImgsInCards = function () {
-  const fragment = document.createDocumentFragment().appendChild(gameBoard);
-
-  for (let i = 0; i < cardDeck.length; i++) {
-    const img = document.createElement('img');
-    img.src = cardDeck[i];
-    fragment.children[i].appendChild(img);
-  }
-  document.querySelector('main').appendChild(fragment);
+  cardDeck.forEach(function (value) {
+    template = `
+        <div class="card">
+            <img class='front front-images' src='images/cardClosed.png' alt='front-card'>
+            <img class='back back__image' src='${value}' alt='back-card'>
+        </div>         
+      `;
+    gameBoard.insertAdjacentHTML('beforeEnd', template);
+  });
 };
 
 const overturnsCard = function () {
@@ -103,7 +105,7 @@ const compareImgs = function () {
 };
 
 function checkWin() {
-  if (winCount === imageses.length) {
+  if (winCount === pointsWon) {
     setTimeout(function () {
       alert('You are the winner!');
     }, duration);
