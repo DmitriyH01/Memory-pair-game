@@ -11,5 +11,5 @@
 - CSS animations
 ---
 
-### [Demo] : <https://dmitriyh01.github.io/Memory-pair-game/>
+### [Demo](https://dmitriyh01.github.io/Memory-pair-game/)
 ---
